@@ -27,20 +27,20 @@ public class Appointment {
 	private LocalDate date;
 
 	@ManyToOne
-	@JoinColumn(name = "p_id", nullable = false)
-	private Patient pId;
+	@JoinColumn(name = "uId", nullable = false)
+	private User userId;
 
 	public Appointment() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Appointment(Long apptId, String bldgrp, String reason, LocalDate date, Patient pId) {
+	public Appointment(Long apptId, String bldgrp, String reason, LocalDate date, User userId) {
 		super();
 		this.apptId = apptId;
 		this.bldgrp = bldgrp;
 		this.reason = reason;
 		this.date = date;
-		this.pId = pId;
+		this.userId = userId;
 	}
 
 	public Long getApptId() {
@@ -75,18 +75,20 @@ public class Appointment {
 		this.date = date;
 	}
 
-	public Patient getpId() {
-		return pId;
+	public User getUserId() {
+		return userId;
 	}
 
-	public void setpId(Patient pId) {
-		this.pId = pId;
+	public void setUserId(User userId) {
+		this.userId = userId;
 	}
 
 	@Override
 	public String toString() {
 		return "Appointment [apptId=" + apptId + ", bldgrp=" + bldgrp + ", reason=" + reason + ", date=" + date
-				+ ", pId=" + pId + "]";
+				+ ", userId=" + userId + "]";
 	}
+
+	
 
 }

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cdac.oralcaremanagement.entity.Patient;
+import com.cdac.oralcaremanagement.entity.User;
 import com.cdac.oralcaremanagement.service.ForgotPasswordService;
 
 
@@ -23,8 +23,8 @@ public class ForgotPasswordController {
 
     //http://localhost:8000/forgot-password/reset
     @PostMapping("/reset")
-    public ResponseEntity<String> resetPassword(@RequestBody Patient patient) {
-        String result = forgotPasswordService.resetPassword(patient);
+    public ResponseEntity<String> resetPassword(@RequestBody User user) {
+        String result = forgotPasswordService.resetPassword(user);
         if (result.equals("Password reset successfully")) {
             return ResponseEntity.ok(result);
         } else if (result.equals("wrong answer")) {

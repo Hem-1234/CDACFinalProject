@@ -4,24 +4,24 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.cdac.oralcaremanagement.dao.PatientRepository;
-import com.cdac.oralcaremanagement.entity.Patient;
+import com.cdac.oralcaremanagement.dao.UserRepository;
+import com.cdac.oralcaremanagement.entity.User;
 
 @Service
 public class ForgotPasswordService {
 
    @Autowired
-   private PatientRepository patientRepository;
+   private UserRepository userRepository;
    
    @Autowired
    private PasswordEncoder passwordEncoder;
    
-   public String resetPassword(Patient patient) {
-	   Patient dbUser = patientRepository.findByEmail(patient.getEmail());
+   public String resetPassword(User user) {
+	   User dbUser = userRepository.findByEmail(user.getEmail());
 	   String ans = dbUser.getAns();
 	   if(dbUser != null) {
-		   if(patient.getAns().equals(ans)) {
-			   dbUser.setPassword(passwordEncoder.encode(patient.getPassword()));
+		   if(user.getAns().equals(ans)) {
+			   dbUser.setPassword(passwordEncoder.encode(user.getPassword()));
 			   return "Password changed Successfully ";
 		   }
 		   return "wrong ans";

@@ -6,17 +6,21 @@ import java.time.LocalDate;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "patient_table")
-public class Patient {
+@Table(name = "user_table")
+public class User {
 
 	@Id
-	@Column(name = "pId")
-	private String pId;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "uId")
+	private Integer userId;
 
 	@Column(name = "firstname")
 	private String fName;
@@ -46,14 +50,18 @@ public class Patient {
 	@Column
 	private String address;
 
-	public Patient() {
+	@Enumerated(EnumType.STRING)
+	@Column(name = "UserRole")
+	private UserRoleEnum userRole;
+
+	public User() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Patient(String pId, String fName, String lName, String email, String password, long mobileNo, String gender,
-			LocalDate dob, String que, String ans, String address) {
+	public User(Integer userId, String fName, String lName, String email, String password, long mobileNo, String gender,
+			LocalDate dob, String que, String ans, String address, UserRoleEnum userRole) {
 		super();
-		this.pId = pId;
+		this.userId = userId;
 		this.fName = fName;
 		this.lName = lName;
 		this.email = email;
@@ -64,14 +72,15 @@ public class Patient {
 		this.que = que;
 		this.ans = ans;
 		this.address = address;
+		this.userRole = userRole;
 	}
 
-	public String getpId() {
-		return pId;
+	public Integer getUserId() {
+		return userId;
 	}
 
-	public void setpId(String pId) {
-		this.pId = pId;
+	public void setUserId(Integer userId) {
+		this.userId = userId;
 	}
 
 	public String getfName() {
@@ -154,11 +163,19 @@ public class Patient {
 		this.address = address;
 	}
 
+	public UserRoleEnum getUserRole() {
+		return userRole;
+	}
+
+	public void setUserRole(UserRoleEnum userRole) {
+		this.userRole = userRole;
+	}
+
 	@Override
 	public String toString() {
-		return "Patient [pId=" + pId + ", fName=" + fName + ", lName=" + lName + ", email=" + email + ", password="
+		return "User [userId=" + userId + ", fName=" + fName + ", lName=" + lName + ", email=" + email + ", password="
 				+ password + ", mobileNo=" + mobileNo + ", gender=" + gender + ", dob=" + dob + ", que=" + que
-				+ ", ans=" + ans + ", address=" + address + "]";
+				+ ", ans=" + ans + ", address=" + address + ", userRole=" + userRole + "]";
 	}
 
 }

@@ -2,26 +2,26 @@ package com.cdac.oralcaremanagement.service;
 
 import java.util.List;
 
-import com.cdac.oralcaremanagement.entity.Patient;
+import com.cdac.oralcaremanagement.entity.User;
 
 public interface IPatientService {
 
-	//register Patient
-		Patient addNewPatient(Patient patient);
+	//register User
+		User addNewPatient(User user);
 		 //     (classname object)
 
 		
-		//get Patient
-		List<Patient> getPatients();
+		//get User
+		List<User> getPatients();
 		
 		
 		//get specific patient
-		Patient getPatient(String pId);
+		User getPatient(String pId);
 		
 		
 		//delete specific patient
 		String deletePatient(String pId);
 		
 		//update Specific patient
-		Patient updatePatient(Patient updatedPatient, Patient existingPatient);
+		User updatePatient(User updatedPatient, User existingPatient);
 	}

@@ -20,8 +20,8 @@ public class Assessment {
 	private long assmntId;
 
 	@OneToOne
-	@JoinColumn(name = "pId")
-	private Patient pId;
+	@JoinColumn(name = "uId")
+	private User userId;
 
 	@ManyToOne
 	@JoinColumn(name = "t_id")
@@ -33,10 +33,10 @@ public class Assessment {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Assessment(long assmntId, Patient pId, Treatment tId, String description) {
+	public Assessment(long assmntId, User userId, Treatment tId, String description) {
 		super();
 		this.assmntId = assmntId;
-		this.pId = pId;
+		this.userId = userId;
 		this.tId = tId;
 		this.description = description;
 	}
@@ -49,12 +49,12 @@ public class Assessment {
 		this.assmntId = assmntId;
 	}
 
-	public Patient getpId() {
-		return pId;
+	public User getUserId() {
+		return userId;
 	}
 
-	public void setpId(Patient pId) {
-		this.pId = pId;
+	public void setUserId(User userId) {
+		this.userId = userId;
 	}
 
 	public Treatment gettId() {
@@ -75,8 +75,9 @@ public class Assessment {
 
 	@Override
 	public String toString() {
-		return "Assessment [assmntId=" + assmntId + ", pId=" + pId + ", tId=" + tId + ", description=" + description
-				+ "]";
+		return "Assessment [assmntId=" + assmntId + ", userId=" + userId + ", tId=" + tId + ", description="
+				+ description + "]";
 	}
+	
 
 }
