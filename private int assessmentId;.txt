@@ -1,0 +1,447 @@
+private int assessmentId;
+	private User uId;
+	private Treatement tId;
+	private String Notes;
+
+
+Patient
+	{
+
+	"pId" : "",
+	"fName":"Hema",
+	"lName":"Borde",
+	"email" : "hema@gmail.com",
+	"password" : 1234,
+	"mobileNo": 9638527413,
+	"gender":"F",
+	"dob":"2020-03-05",
+	"que":"what city you were born in?",
+	"ans":"AhmedNagar",
+	"address":"Pune"
+
+
+	}
+
+	{
+
+	"pId" : "",
+	"fName":"Prachi",
+	"lName":"Giradkar",
+	"email" : "prachi@gmail.com",
+	"password" :"p_1245",
+	"mobileNo": 9682527413,
+	"gender":"F",
+	"dob":"2002-03-05",
+	"que":"what city you were born in?",
+	"ans":"Nagpur",
+	"address":"Nasik"
+
+	}
+
+{
+
+	"pId" : "",
+	"fName":"Avinash",
+	"lName":"Patil",
+	"email" : "avinash@gmail.com",
+	"password" :"p_1245",
+	"mobileNo": 9696387413,
+	"gender":"M",
+	"dob":"1998-03-05",
+	"que":"what city you were born in?",
+	"ans":"Jalgaon",
+	"address":"Mumbai"
+
+	}
+
+http://localhost:8000/getPatients 
+http://localhost:8000/getPatient/P1003
+http://localhost:8000/deletePatient/P1008
+
+
+
+
+=============================================================
+
+Doctor {
+
+{
+
+	"dId" : "",
+	"fName":"Omkar",
+	"lName":"Patwardhan",
+	"email" : "omkar@gmail.com",
+	"password" : 1234,
+	"mobileNo": 8038527413,
+	"gender":"M",
+	"dob":"2002-03-05",
+	"d_Que":"what city you were born in?",
+	"d_Ans":"Sangli",
+	"address":"Nasik"
+
+
+	}
+
+	{
+	"dId" : "",
+	"fName":"Adarsh",
+	"lName":"Bhujbal",
+	"email" : "adarsh@gmail.com",
+	"password" : 1234,
+	"mobileNo": 7538527413,
+	"gender":"M",
+	"dob":"2001-03-05",
+	"d_Que":"what city you were born in?",
+	"d_Ans":"Mumbai",
+	"address":"Nasik"
+
+
+	}
+
+
+{
+	"dId" : "",
+	"fName":"Rushikesh",
+	"lName":"Majale",
+	"email" : "Rushikesh@gmail.com",
+	"password" : 456325,
+	"mobileNo": 5468527324,
+	"gender":"M",
+	"dob":"1998-01-05",
+	"d_Que":"what city you were born in?",
+	"d_Ans":"Kolhapur",
+	"address":"Nasik"
+
+
+	}
+
+
+{
+	"dId" : "",
+	"fName":"Abhi",
+	"lName":"Khote",
+	"email" : "Abhi@gmail.com",
+	"password" : 456325,
+	"mobileNo": 5698527324,
+	"gender":"M",
+	"dob":"2002-01-05",
+	"d_Que":"what city you were born in?",
+	"d_Ans":"Pandharpur",
+	"address":"Pune"
+
+
+	}
+
+{
+	"dId" : "",
+	"fName":"Megha",
+	"lName":"Aware",
+	"email" : "Megha123@gmail.com",
+	"password" : 456325,
+	"mobileNo": 5698527324,
+	"gender":"F",
+	"dob":"1988-01-05",
+	"d_Que":"what city you were born in?",
+	"d_Ans":"Pune",
+	"address":"Mumbai"
+
+
+	}
+
+
+
+http://localhost:8000/getDoctors
+http://localhost:8000/getDoctor/D102
+http://localhost:8000/updateDoctor/D105
+
+
+===============================================================================
+
+
+
+	{
+
+	"uId" : "P_1006",
+	"fName":"Aditi",
+	"lName":"Kolhe",
+	"email":"aditi@gmail.com",
+	"password":396325,
+	"mobileNo":9586527324,
+	"gender":"F",
+	"dob":"2003-01-05",
+	"userRole":"PATIENT"
+
+	}
+
+{	
+	"uId" : "P_1007",
+	"fName":"Aditya",
+	"lName":"Kale",
+	"email":"aditya@gmail.com",
+	"password":396325,
+	"mobileNo":9586527324,
+	"gender":"M",
+	"dob":"2002-01-05",
+	"userRole":"PATIENT"
+	}
+
+{	
+	"uId" : "P_1008",
+	"fName":"Ashwini",
+	"lName":"Powar",
+	"email":"ashwini@gmail.com",
+	"password":396325,
+	"mobileNo":9586527324,
+	"gender":"F",
+	"dob":"2012-01-05",
+	"userRole":"PATIENT"
+	}
+
+{	
+	"uId" : "P_1009",
+	"fName":"Kishore",
+	"lName":"Jadhav",
+	"email":"Kishore@gmail.com",
+	"password":396325,
+	"mobileNo":9586527324,
+	"gender":"M",
+	"dob":"2002-01-05",
+	"userRole":"PATIENT"
+	}
+
+{	
+	"uId" : "P_1010",
+	"fName":"Ajit",
+	"lName":"Pawar",
+	"email":"ajit@gmail.com",
+	"password":396325,
+	"mobileNo":9586527324,
+	"gender":"F",
+	"dob":"2002-01-05",
+	"userRole":"PATIENT"
+	}
+
+
+===========================
+Appointment
+
+http://localhost:8000/addAppt
+
+
+
+{
+
+	"appId":"",
+	"bldgrp":"A+ve",
+	"reason":"Tooth Allignment",
+	"date":"2024-01-01",
+	"pId":{
+       "pId" : "P1005"
+    }
+}
+
+{
+	"appId":"",
+	"bldgrp":"B+ve",
+	"reason":"Tooth Removal",
+	"date":"2024-02-01",
+	"pId":{	
+	"pId":"P1006"
+	}
+}
+
+
+{
+	"appId":"",
+	"bldgrp":"O-ve",
+	"reason":"Teeth Whitening",
+	"date":"2024-03-01",
+	"pId":{		
+	"pId" : "P1007"
+	
+	}
+}
+
+{
+	"appId":"",
+	"bldgrp":"O-ve",
+	"reason":"Teeth Whitening",
+	"date":"2024-03-10",
+	"pId":{		
+	"pId" : "P1007"
+	
+	}
+}
+
+
+{
+	"appId":"",
+	"bldgrp":"B+ve",
+	"reason":"Tooth Removal",
+	"date":"2024-02-20",
+	"pId":{	
+	"pId":"P1006"
+	}
+}
+
+{
+	"appId":"",
+	"bldgrp":"B+ve",
+	"reason":"Tooth Removal",
+	"date":"2024-02-27",
+	"pId":{	
+	"pId":"P1006"
+	}
+}
+
+
+
+==============================================
+
+
+Treatment
+
+
+{
+
+	"tId":"",
+	"name":"Teeth Whitening",
+	"description":"abcdabcd",
+	"price":1000
+
+}
+
+{
+
+	"tId":"",
+	"name":"Tooth Removal",
+	"description":"abcdabcd",
+	"price":1500
+
+}
+
+{
+
+	"tId":"",
+	"name":"Tooth Allignment",
+	"description":"abcdabcd",
+	"price":1500
+
+}
+
+{
+
+
+	"tId":"",
+	"name":"Crown Replacement",
+	"description":"abcdabcd",
+	"price":3000
+
+}
+
+{
+
+
+	"tId":"",
+	"name":"Crown Replacement",
+	"description":"abcdabcd",
+	"price":3000
+
+}
+
+
+
+==================================
+
+Payment
+
+	{
+	"payId":"",
+	"date":"2024-01-12",
+	"amount":5000,
+	"apptId":{
+	"apptId":"1"
+	
+	}
+}
+
+
+{
+	"payId":"",
+	"date":"2024-01-10",
+	"amount":2000,
+	"apptId":{
+	"apptId":"2"
+}
+}
+
+
+{
+	"payId":"",
+	"date":"2024-03-10",
+	"amount":2000,
+	"apptId":{
+	"apptId":3
+    }
+}
+
+
+
+
+{
+	"payId":"",
+	"date":"2024-03-10",
+	"amount":2000,
+	"apptId":{
+	"apptId":4
+    }
+}
+
+
+================================================
+
+
+Assessment
+
+{
+
+ 	"assessmentId":"",
+	"pId":
+	{"pId" : "P1005"
+	},
+	 "tId":{
+		"tId":"1"
+       },
+        "description":"1st assessment report"
+}
+
+
+{
+
+ 	"assessmentId":"",
+
+{
+    "assessmentId": "",
+    "pId": {
+        "pId": "P1007"
+    },
+    "tId": {
+        "tId": "2"
+    },
+    "description": "2nd assessment report"
+}
+
+{
+    "assessmentId": "",
+    "pId": {
+        "pId": "P1006"
+    },
+    "tId": {
+        "tId": "4"
+    },
+    "description": "3rd assessment report"
+}
+Delete not working for Payment and assessment
+
+ "message": "The given id must not be null",
+    "path": "/deletePayment/7"
