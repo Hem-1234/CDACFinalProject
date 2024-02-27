@@ -6,18 +6,19 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.cdac.oralcaremanagement.dao.TreatmentRepository;
+import com.cdac.oralcaremanagement.dao.ITreatmentRepository;
 import com.cdac.oralcaremanagement.entity.Treatment;
 
 @Service
 public class TreatmentService {
 
 	@Autowired
-	private TreatmentRepository treatmentRepoRef;
+	private ITreatmentRepository treatmentRepoRef;
 
-	public void addNewTreatment(Treatment treatmentRef) {
+	public String addNewTreatment(Treatment treatmentRef) {
 
 		treatmentRepoRef.save(treatmentRef);
+		return "Treatment added successfully";
 	}
 
 	public void deleteOneTreatment(long tId) {

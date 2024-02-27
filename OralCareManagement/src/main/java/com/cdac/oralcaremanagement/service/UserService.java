@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.cdac.oralcaremanagement.dao.UserRepository;
+import com.cdac.oralcaremanagement.dao.IUserRepository;
 import com.cdac.oralcaremanagement.entity.User;
 
 
@@ -15,7 +15,7 @@ import com.cdac.oralcaremanagement.entity.User;
 public class UserService {
 
 	@Autowired
-	private UserRepository userRepoRef;
+	private IUserRepository userRepoRef;
 
 	@Autowired
 	private PasswordEncoder encoder;
@@ -47,13 +47,13 @@ public class UserService {
 	public User getOneUser(Integer uId) {
 		// Optional class is provided since Java 8.
 		// Its object may hold a value or may not.
-		User foundPatient = null;
+		User foundUser = null;
 		Optional<User> opt = userRepoRef.findById(uId);
 		if (!opt.isEmpty())
-			foundPatient = opt.get();// Getting the User object from that Optional object
-		return foundPatient;
+			foundUser = opt.get();// Getting the User object from that Optional object
+		return foundUser;
 
-//		return patientRepoRef.findById(id).orElseThrow(() -> new PatientHandlingException("Invalid User id!!"));
+//		return userRepoRef.findById(id).orElseThrow(() -> new USeHandlingException("Invalid User id!!"));
 	}
 
 	public User updatedUser(User existingUser, User updatedUser) {

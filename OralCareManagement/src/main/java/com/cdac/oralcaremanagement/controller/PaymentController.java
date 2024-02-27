@@ -3,6 +3,8 @@ package com.cdac.oralcaremanagement.controller;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.cdac.oralcaremanagement.dto.ErrorResponse;
 import com.cdac.oralcaremanagement.entity.Payment;
 import com.cdac.oralcaremanagement.service.PaymentService;
 
@@ -25,10 +28,22 @@ public class PaymentController {
 	private PaymentService paymentServiceRef;
 
 	// http://localhost:8000/payment/addPayment
+	// @PostMapping("/addPayment")
+//	public void addNewPayment(@RequestBody Payment paymentRef) {
+//		System.out.println(paymentRef);
+//		paymentServiceRef.addNewPayment(paymentRef);
+//	}
+
+	// http://localhost:8000/payment/addPayment
 	@PostMapping("/addPayment")
-	public void addNewPayment(@RequestBody Payment paymentRef) {
-		System.out.println(paymentRef);
-		paymentServiceRef.addNewPayment(paymentRef);
+	public ResponseEntity<?> addNewPayment(@RequestBody Payment transientPayment) {
+		try {
+			String payment = paymentServiceRef.addNewPayment(transientPayment);
+			return new ResponseEntity<>(payment, HttpStatus.CREATED);
+		} catch (RuntimeException e) {
+			return new ResponseEntity<>(new ErrorResponse("Failed to add user", e.getMessage()),
+					HttpStatus.INTERNAL_SERVER_ERROR);
+		}
 	}
 
 	// http://localhost:8000/payment/getPayments
@@ -46,7 +61,7 @@ public class PaymentController {
 		return foundPayment;
 	}
 
-	//http://localhost:8000/payment/updatePayment/1
+	// http://localhost:8000/payment/updatePayment/1
 	@PutMapping("/updatePayment/{pId}") // to update existing payment
 	public Payment updateById(@RequestBody Payment updatedPayment, @PathVariable long pId) {
 		Payment existingPayment = paymentServiceRef.getOnePayment(pId);

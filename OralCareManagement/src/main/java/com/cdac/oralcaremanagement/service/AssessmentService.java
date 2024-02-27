@@ -5,7 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.cdac.oralcaremanagement.dao.AssessmentRepository;
+import com.cdac.oralcaremanagement.dao.IAssessmentRepository;
 import com.cdac.oralcaremanagement.entity.Assessment;
 
 
@@ -13,7 +13,7 @@ import com.cdac.oralcaremanagement.entity.Assessment;
 public class AssessmentService {
 	
 	@Autowired
-	private AssessmentRepository assessmentRepoRef;
+	private IAssessmentRepository assessmentRepoRef;
 	
 	public void addNewAssessment(Assessment assessmentRef) {
 		assessmentRepoRef.save(assessmentRef);

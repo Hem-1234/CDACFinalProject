@@ -6,20 +6,25 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.cdac.oralcaremanagement.dao.PaymentRepository;
+import com.cdac.oralcaremanagement.dao.IPaymentRepository;
 import com.cdac.oralcaremanagement.entity.Payment;
 
 @Service
 public class PaymentService {
 
 	@Autowired
-	private PaymentRepository PaymentRepoRef;
+	private IPaymentRepository PaymentRepoRef;
 	
-	public void addNewPayment(Payment paymentRef) {
+//	public void addNewPayment(Payment paymentRef) {
+//		PaymentRepoRef.save(paymentRef);
+//		
+//	}
+	
+	public String addNewPayment(Payment paymentRef) {
+
 		PaymentRepoRef.save(paymentRef);
-		
+		return "Payment successfully completed";
 	}
-	
 	public Collection<Payment> getAllPayments(){
 		
 		Collection<Payment> getAllPayments = PaymentRepoRef.findAll();

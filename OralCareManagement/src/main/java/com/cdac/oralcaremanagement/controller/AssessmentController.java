@@ -31,7 +31,7 @@ public class AssessmentController {
 		assessmentServiceRef.addNewAssessment(assessmentRef);
 	}
 
-	// http://localhost:8000/assessment/getAssessment
+	// http://localhost:8000/assessment/getAssessments
 
 	@GetMapping("/getAssessments")
 	public Collection<Assessment> getAllAssessments() {
